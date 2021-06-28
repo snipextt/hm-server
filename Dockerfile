@@ -7,5 +7,5 @@ RUN npm install
 RUN npm run build:npm
 
 EXPOSE 2002
-RUN npm run start:npm
+CMD npm run start:npm
 
