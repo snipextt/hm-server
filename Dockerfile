@@ -1,11 +1,11 @@
-FROM node
+FROM node:14-alpine
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir /app
+WORKDIR /app
 COPY . .
-RUN npm install --production=false
-RUN npm build:npm
+RUN npm install
+RUN npm run build:npm
 
 EXPOSE 2002
-RUN npm run:npm
+RUN npm run start:npm
 
