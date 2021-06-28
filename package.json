@@ -11,6 +11,8 @@
   },
   "scripts": {
     "build": "yarn pnpify tsc",
+    "build:npm": "tsc",
+    "run:npm": "node dist/index.js",
     "build:watch": "yarn pnpify tsc --watch",
     "dev:watch": "nodemon dist/index.js"
   },
