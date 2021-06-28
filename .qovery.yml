@@ -1,0 +1,15 @@
+---
+application:
+  name: "hm-server"
+  project: "hm"
+  organization: "QoveryCommunity"
+databases:
+- type: "MONGODB"
+  name: "hm"
+  version: "4.4"
+routers:
+- name: "main-hm-server"
+  routes:
+  - application_name: "hm-server"
+    paths:
+    - "/*"
