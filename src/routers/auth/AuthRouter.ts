@@ -26,7 +26,7 @@ AuthRouter.post('/login', async (req, res) => {
     'key',
     (err: Error | null, authToken: string | undefined) => {
       if (err) res.status(500).json(err);
-      else res.status(200).json({ authToken });
+      else res.status(200).json({ authToken, userID: user.id });
     }
   );
 });
