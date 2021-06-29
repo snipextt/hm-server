@@ -2,9 +2,12 @@ import { compare, genSalt, hash } from 'bcryptjs';
 import { Router } from 'express';
 import { sign } from 'jsonwebtoken';
 import { User } from '../../db';
-import AdminMiddlewere from './utils/AdminMiddlewere';
 
 const AuthRouter = Router();
+
+AuthRouter.get('/', (req, res) => {
+  res.send({ msg: 'It Works!' });
+});
 
 AuthRouter.post('/login', async (req, res) => {
   const userInfo = req.body;

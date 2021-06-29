@@ -120,6 +120,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cors@npm:^2.8.10":
+  version: 2.8.10
+  resolution: "@types/cors@npm:2.8.10"
+  checksum: c3f3d6feee59ff75127fec3030d55c3d5f1adfc07953facdae67c47dcd54c83c46a5e92f08afa53542ec978da38a388697d30731019798cb157c9e96c64ef6c3
+  languageName: node
+  linkType: hard
+
 "@types/emscripten@npm:^1.38.0":
   version: 1.39.4
   resolution: "@types/emscripten@npm:1.39.4"
@@ -189,15 +196,6 @@ __metadata:
     "@types/bson": "*"
     "@types/node": "*"
   checksum: 6828e73bf8e98f261898a5b1e48d43873216f21726ec6a2b9a381e5413082ad4886e4581fe2c48fc61c6bd0f7dd8c7f1855d5b38493cdba402711958a3ba64b9
-  languageName: node
-  linkType: hard
-
-"@types/mongoose@npm:^5.11.97":
-  version: 5.11.97
-  resolution: "@types/mongoose@npm:5.11.97"
-  dependencies:
-    mongoose: "*"
-  checksum: 935383a816c7380939f66b0c5a603600d60346263b0438bde153302252b22cd02363c36971eee586127e0b57662ab973186c83167d0e197a42211b5869fa0d0e
   languageName: node
   linkType: hard
 
@@ -682,6 +680,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cors@npm:^2.8.5":
+  version: 2.8.5
+  resolution: "cors@npm:2.8.5"
+  dependencies:
+    object-assign: ^4
+    vary: ^1
+  checksum: c83e88c15428b87ff55853ec5ce961b650c7aa3de536aadebbeb2334872d86a8be57165a77996f3b746366c950c2d51624a9b76b88fb7f18d178eca051ca1ae2
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -1071,12 +1079,13 @@ __metadata:
   dependencies:
     "@typegoose/typegoose": ^7.6.1
     "@types/bcryptjs": ^2.4.2
+    "@types/cors": ^2.8.10
     "@types/express": ^4.17.12
     "@types/jsonwebtoken": ^8.5.2
-    "@types/mongoose": ^5.11.97
     "@types/node": ^15.12.5
     "@yarnpkg/pnpify": ^3.0.0-rc.7
     bcryptjs: ^2.4.3
+    cors: ^2.8.5
     dotenv: ^10.0.0
     express: ^4.17.1
     jsonwebtoken: ^8.5.1
@@ -1551,7 +1560,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:*, mongoose@npm:5.12.15, mongoose@npm:^5.12.15":
+"mongoose@npm:5.12.15, mongoose@npm:^5.12.15":
   version: 5.12.15
   resolution: "mongoose@npm:5.12.15"
   dependencies:
@@ -1640,6 +1649,13 @@ __metadata:
   version: 6.1.0
   resolution: "normalize-url@npm:6.1.0"
   checksum: 5fb69e98c149f4a54a7bb0f1904cc524627c0d23327a9feafacacf135d01d9595c65e80ced6f27c17c1959541ea732815b604ff8a6ec52ec3fe7a391b92cfba9
+  languageName: node
+  linkType: hard
+
+"object-assign@npm:^4":
+  version: 4.1.1
+  resolution: "object-assign@npm:4.1.1"
+  checksum: 66cf021898fc1b13ea573ea8635fbd5a76533f50cecbc2fcd5eee1e8029af41bcebe7023788b6d0e06cbe4401ecea075d972f78ec74467cdc571a0f1a4d1a081
   languageName: node
   linkType: hard
 
@@ -2284,7 +2300,7 @@ typescript@^4.3.4:
   languageName: node
   linkType: hard
 
-"vary@npm:~1.1.2":
+"vary@npm:^1, vary@npm:~1.1.2":
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
   checksum: 591f059f727ac1ba0d97cb7767f8583a03fcbb07db7be2b7dce838ede520ec0e958a41cb19077054769077fdc49a9b9a2dc391c83426bfee89c054b8cc7404bf
