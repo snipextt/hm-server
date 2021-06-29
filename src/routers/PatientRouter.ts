@@ -11,7 +11,7 @@ PatientRouter.get('/appointments/:id', async (req, res) => {
   const appointments = await Appointment.find({ patient: id }).catch((err) => {
     res.status(500).json(err);
   });
-  if (appointments!.length) res.status(200).json(appointments);
+  if (appointments) res.status(200).json(appointments);
 });
 
 PatientRouter.get('/prescriptions/:id', async (req, res) => {
