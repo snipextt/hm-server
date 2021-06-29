@@ -5,7 +5,7 @@ import { Prescription } from './models/PrescriptionModel';
 import { User } from './models/UserModel';
 
 let connectTooDB = connect(
-  process.env.MONGO_URI,
+  process.env.MONGO_URI!,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
