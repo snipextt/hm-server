@@ -37,7 +37,7 @@ PatientRouter.get('/doctors', async (req, res) => {
   const doctors = await User.find({ userType: 'd' }).catch((err) => {
     res.status(400).json({ err: err });
   });
-  if (doctors!.length) res.status(200).json(doctors);
+  if (doctors.length) res.status(200).json(doctors);
 });
 
 export default PatientRouter;
