@@ -20,7 +20,7 @@ PatientRouter.get('/prescriptions/:id', async (req, res) => {
   const appointments = await Prescription.find({ patient: id }).catch((err) => {
     res.status(500).json(err);
   });
-  if (appointments!.length) res.status(200).json(appointments);
+  if (appointments) res.status(200).json(appointments);
 });
 
 PatientRouter.post('/appointment', async (req, res) => {
@@ -37,7 +37,7 @@ PatientRouter.get('/doctors', async (req, res) => {
   const doctors = await User.find({ userType: 'd' }).catch((err) => {
     res.status(400).json({ err: err });
   });
-  if (doctors.length) res.status(200).json(doctors);
+  if (doctors) res.status(200).json(doctors);
 });
 
 export default PatientRouter;
