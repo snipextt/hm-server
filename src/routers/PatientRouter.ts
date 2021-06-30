@@ -8,9 +8,11 @@ PatientRouter.use(PatientMiddlewere);
 PatientRouter.get('/appointments/:id', async (req, res) => {
   const id = req.params.id;
   if (!id) res.status(400).json({ err: 'Missing id' });
-  const appointments = await Appointment.find({ patient: id }).catch((err) => {
-    res.status(500).json(err);
-  });
+  const appointments = await Appointment.find({ patient: id })
+    .populate('medicationList')
+    .catch((err) => {
+      res.status(500).json(err);
+    });
   if (appointments) res.status(200).json(appointments);
 });
 
