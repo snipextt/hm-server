@@ -9,7 +9,8 @@ PatientRouter.get('/appointments/:id', async (req, res) => {
   const id = req.params.id;
   if (!id) res.status(400).json({ err: 'Missing id' });
   const appointments = await Appointment.find({ patient: id })
-    .populate('medicationList')
+    .populate({ path: 'patient', select: 'name' })
+    .populate({ path: 'doctor', select: 'name' })
     .catch((err) => {
       res.status(500).json(err);
     });
@@ -19,9 +20,13 @@ PatientRouter.get('/appointments/:id', async (req, res) => {
 PatientRouter.get('/prescriptions/:id', async (req, res) => {
   const id = req.params.id;
   if (!id) res.status(400).json({ err: 'Missing id' });
-  const appointments = await Prescription.find({ patient: id }).catch((err) => {
-    res.status(500).json(err);
-  });
+  const appointments = await Prescription.find({ patient: id })
+    .populate('medicationList')
+    .populate({ path: 'patient', select: 'name' })
+    .populate({ path: 'doctor', select: 'name' })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
   if (appointments) res.status(200).json(appointments);
 });
 

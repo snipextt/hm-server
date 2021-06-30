@@ -15,7 +15,8 @@
     "build:npm": "tsc",
     "start:npm": "node dist/index.js",
     "build:watch": "yarn pnpify tsc --watch",
-    "dev:watch": "nodemon dist/index.js"
+    "dev:watch": "nodemon dist/index.js",
+    "start": "node dist/index.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
