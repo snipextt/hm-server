@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { Appointment, Prescription, User } from '../db';
+import { Appointment, Medicine, Prescription, User } from '../db';
 import { DoctorMiddlewere } from './auth';
 
 const DoctorRouter = Router();
@@ -35,6 +35,13 @@ DoctorRouter.post('/prescription', async (req, res) => {
 
 DoctorRouter.get('/patients', async (req, res) => {
   const doctors = await User.find({ userType: 'p' }).catch((err) => {
+    res.status(400).json({ err: err });
+  });
+  if (doctors) res.status(200).json(doctors);
+});
+
+DoctorRouter.get('/medicines', async (req, res) => {
+  const doctors = await Medicine.find({}).catch((err) => {
     res.status(400).json({ err: err });
   });
   if (doctors) res.status(200).json(doctors);
