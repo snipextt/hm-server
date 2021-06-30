@@ -5,7 +5,7 @@ import { Prescription } from './models/PrescriptionModel';
 import { User } from './models/UserModel';
 
 let connectTooDB = connect(
-  'mongodb+srv://snipextt:snipextt@db.bgwad.mongodb.net/hospital-management?retryWrites=true&w=majority',
+  process.env.MONGO_URI!,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
